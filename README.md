@@ -8,3 +8,4 @@ Ac-remote features:
 Implemented for education purpose only.   
   ### Screenshots
 ![Screenshot](1.png)
+![Screenshot](2.png)
