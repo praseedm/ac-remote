@@ -1,0 +1,1 @@
+{"status":0,"temp":18,"mode":0,"speed":0,"swing":0}
