@@ -8,31 +8,28 @@ class UserTest extends \PHPUnit\Framework\TestCase
     public function setup() {
         $this->user = new User;
     }
+
     /** @test */
     public function Get_First_Name() {
-        $user = new User;
-        $user->setFirstName('Lamp');
+        $this->user->setFirstName('Lamp');
 
-        $this->assertEquals($user->getFirstName(), 'Lamp');
+        $this->assertEquals($this->user->getFirstName(), 'Lamp');
     }
 
     public function testTrimmed() {
-        $user = new User;
-        $user->setFirstName("Lamp ");
-        $user->setLastName(" Black");
+        $this->user->setFirstName("Lamp ");
+        $this->user->setLastName(" Black");
 
-        $this->assertEquals("Lamp", $user->getFirstName());
-        $this->assertEquals("Black", $user->getLastName());
+        $this->assertEquals("Lamp", $this->user->getFirstName());
+        $this->assertEquals("Black", $this->user->getLastName());
     }
 
     public function testEmailVariablesContainCorrectValues() {
+        $this->user->setFirstName("Lamb");
+        $this->user->setLastName("Black");
+        $this->user->setEmail('lamb@g.com');
 
-         $user = new User;
-        $user->setFirstName("Lamb");
-        $user->setLastName("Black");
-        $user->setEmail('lamb@g.com');
-
-        $email_variables = $user->getEmailVariables();
+        $email_variables = $this->user->getEmailVariables();
         $this->assertArrayHasKey('full_name', $email_variables);
         $this->assertArrayHasKey('email', $email_variables);
 
