@@ -2,6 +2,12 @@
 use \Models\User;
 class UserTest extends \PHPUnit\Framework\TestCase
 {
+    protected $user;
+
+    //calls before all test functions//
+    public function setup() {
+        $this->user = new User;
+    }
     /** @test */
     public function Get_First_Name() {
         $user = new User;
