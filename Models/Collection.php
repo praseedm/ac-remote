@@ -19,4 +19,15 @@ class Collection
         return count($this->items);
     }
 
+    public function add(array $item) {
+        return $this->items = array_merge($this->items, $item);
+    }
+
+    public function merge(Collection $collection) {
+        return $this->add($collection->get());
+    }
+
+    public function toJson() {
+        return json_encode($this->items);
+    }
 }

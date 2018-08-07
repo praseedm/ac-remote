@@ -27,4 +27,35 @@ class CollectionTest extends \PHPUnit\Framework\TestCase
         $this->assertCount(2, $collection->get());
         $this->assertEquals('one', $collection->get()[0]);
     }
+
+    /** @test */
+    public function add_items_to_collection () {
+        $collection = new Collection([
+            'one', 'two'
+        ]);
+        $collection->add(['three']);
+        $this->assertEquals(3,$collection->get_count());
+        $this->assertCount(3,$collection->get());
+    }
+
+    /** @test */
+    public function merge_collection_together() {
+        $collection1 = new Collection([
+            'one', 'two'       ]);
+        $collection2 = new Collection([
+            'three', 'four', 'five' ]);
+        $collection1->merge($collection2);
+        $this->assertEquals(5,$collection1->get_count());
+        $this->assertCount(5,$collection1->get());
+    }
+
+    /** @test */
+    public function return_json_encoded_items () {
+        $collection = new Collection([
+            ['username' => 'billy'],
+            ['username' => 'tom']
+        ]);
+
+        $this->assertEquals('[{"username":"billy"},{"username":"tom"}]', $collection->toJson());
+    }
 }
