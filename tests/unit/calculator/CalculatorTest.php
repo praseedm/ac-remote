@@ -39,4 +39,29 @@ class CalculatorTest extends \PHPUnit\Framework\TestCase
 
         $this->assertCount(1,$calculator->getOperations());
     }
+
+    /** @test */
+    public function can_calculate_result() {
+        $addition = new Addition;
+        $addition->setOperands([5,3]);
+
+        $calculator = new Calculator();
+        $calculator->setOperation($addition);
+
+        $this->assertEquals(8,$calculator->calculate()[0]);
+    }
+
+    /** @test */
+    public function can_calculate_multiple_results () {
+        $addition_1 = new Addition;
+        $addition_1->setOperands([5,3]);
+
+        $addition_2 = new Addition;
+        $addition_2->setOperands([2,3]);
+
+        $calculator = new Calculator();
+        $calculator->setOperations([$addition_1, $addition_2]);
+
+        $this->assertEquals([8,5], $calculator->calculate());
+    }
 }

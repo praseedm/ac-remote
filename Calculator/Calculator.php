@@ -3,7 +3,7 @@
 namespace Calculator;
 
 
-class Calculator
+class Calculator implements OperationsInterface
 {
     protected $operations = [];
     public function setOperation(OperationsInterface $operation) {
@@ -23,5 +23,18 @@ class Calculator
     }
     public function getOperations() {
         return $this->operations;
+    }
+
+    public function calculate()
+    {
+//        $result = null;
+//        foreach($this->operations as $operation) {
+//            $result[] = $operation->calculate();
+//        }
+
+        return array_map(function ($operation) {
+                return $operation->calculate();
+                }, $this->operations);
+       // return $result;
     }
 }
