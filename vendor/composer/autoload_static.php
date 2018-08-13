@@ -28,6 +28,10 @@ class ComposerStaticInitc3004ed4193428c8c0eae6d8059911fb
             'Doctrine\\Instantiator\\' => 22,
             'DeepCopy\\' => 9,
         ),
+        'C' => 
+        array (
+            'Calculator\\' => 11,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -53,6 +57,10 @@ class ComposerStaticInitc3004ed4193428c8c0eae6d8059911fb
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
+        'Calculator\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Calculator',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -66,6 +74,7 @@ class ComposerStaticInitc3004ed4193428c8c0eae6d8059911fb
     );
 
     public static $classMap = array (
+        'Calculator\\Addition' => __DIR__ . '/../..' . '/Calculator/Addition.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
@@ -94,6 +103,7 @@ class ComposerStaticInitc3004ed4193428c8c0eae6d8059911fb
         'Doctrine\\Instantiator\\Exception\\UnexpectedValueException' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/UnexpectedValueException.php',
         'Doctrine\\Instantiator\\Instantiator' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Instantiator.php',
         'Doctrine\\Instantiator\\InstantiatorInterface' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/InstantiatorInterface.php',
+        'Models\\Collection' => __DIR__ . '/../..' . '/Models/Collection.php',
         'Models\\User' => __DIR__ . '/../..' . '/Models/User.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
